@@ -92,17 +92,6 @@
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link -->
-                <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
                 <!-- Github link -->
                 <span class="link-block">
                   <a href="https://github.com/tlpss/cabinet-manipulation-eef" target="_blank"
@@ -124,6 +113,18 @@
                     <span>arXiv</span>
                   </a>
                 </span>
+
+
+                <!-- posteer PDF link -->
+                <span class="link-block">
+                  <a href="static/pdfs/ICRA23-poster.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span>
               </div>
             </div>
           </div>
@@ -137,14 +138,16 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted loop width="80%">
+        <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted loop width="100%">
           <!-- Your video here -->
-          <source src="static/videos/3_5x_cut.mp4" type="video/mp4">
+          <source src="static/videos/ex3-4x.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered">
-          We create a system that uses proprioceptive sensing to open articulated objects, such as this IKEA cabinet,
+          We create a system that uses proprioceptive sensing to open articulated objects, such as this
+          IKEA cabinet,
           with a position-controlled robot and a parallel gripper.
-          By showing this is a viable approach, we hope to inspire future work to revisit proprioceptive sensing for
+          By showing this is a viable approach, we hope to inspire future work to revisit proprioceptive
+          sensing for
           articulated object manipulation.
         </h2>
       </div>
@@ -160,17 +163,28 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Assistive robots will need to interact with articulated objects such as cabinets or microwaves. Early work
-              on creating systems for doing so used proprioceptive sensing to estimate joint mechanisms during contact.
-              However, nowadays, almost all systems use only vision and no longer consider proprioceptive information
-              during contact. We believe that proprioceptive information during contact is a valuable source of
-              information and did not find clear motivation for not using it in the literature. Therefore, in this
-              paper, we create a system that, starting from a given grasp, uses proprioceptive sensing to open cabinets
-              with a position-controlled robot and a parallel gripper. We perform a qualitative evaluation of this
-              system, where we find that slip between the gripper and handle limits the performance. Nonetheless, we
-              find that the system already performs quite well. This poses the question: should we make more use of
-              proprioceptive information during contact in articulated object manipulation systems, or is it not worth
-              the added complexity, and can we manage with vision alone? We do not have an answer to this question, but
+              Assistive robots will need to interact with articulated objects such as cabinets or
+              microwaves. Early work
+              on creating systems for doing so used proprioceptive sensing to estimate joint mechanisms
+              during contact.
+              However, nowadays, almost all systems use only vision and no longer consider proprioceptive
+              information
+              during contact. We believe that proprioceptive information during contact is a valuable
+              source of
+              information and did not find clear motivation for not using it in the literature. Therefore,
+              in this
+              paper, we create a system that, starting from a given grasp, uses proprioceptive sensing to
+              open cabinets
+              with a position-controlled robot and a parallel gripper. We perform a qualitative evaluation
+              of this
+              system, where we find that slip between the gripper and handle limits the performance.
+              Nonetheless, we
+              find that the system already performs quite well. This poses the question: should we make
+              more use of
+              proprioceptive information during contact in articulated object manipulation systems, or is
+              it not worth
+              the added complexity, and can we manage with vision alone? We do not have an answer to this
+              question, but
               we hope to spark some discussion on the matter.
             </p>
           </div>
@@ -181,7 +195,146 @@
   <!-- End paper abstract -->
 
 
+  <!-- overview figure -->
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title is-3">System Overview</h2>
 
+            <img src="static/images/proprio-cabinets-overview.png" alt="Overview" class="center-image">
+            <div class="level-set has-text-justified">
+              <p>
+                Under the assumption of a rigid transform between the gripper and the handle, we can use the gripper
+                poses to estimate the joint twist. We modify a Factor Graph proposed by <a href="https://arxiv.org/abs/2205.03721">Heppert et Al.</a> to do so. An
+                admittance controller is then used to deal with estimation errors and open the articulated object. Subsequent gripper poses allow to refine the joint estimation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Results -->
+  <section class="section hero is-small is-light">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title-is-3"> Results </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column">
+
+          <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted width="100%">
+            <!-- Your video here -->
+            <source src="static/videos/ex5-4x.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted width="100%">
+            <!-- Your video here -->
+            <source src="static/videos/ex2-4x.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted width="100%">
+            <!-- Your video here -->
+            <source src="static/videos/ex4-4x.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="column">
+          <video style="display: block; margin: auto;" poster="" id="tree" autoplay controls muted width="100%">
+            <!-- Your video here -->
+            <source src="static/videos/ex1-4x.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <p>We find that our system is able to open various articulated objects, irrespective of their relative pose
+              or surroundings.
+              This reconfirms the potential of proprioceptive sensing for articulated object manipulation.
+
+              Nonetheless, we observe a few limtations, the first of which is directly related to the use of
+              proprioceptive sensing:
+              <br>
+              <br>
+              Slip between the gripper and handle can occur (see for example the video of the upside down cabinet) and
+              deteriorates the articulation estimation. This does not necessarily result in a failure to open the
+              object, yet it will need to be addressed
+              to obtain more robust systems.
+              <br>
+              <br>
+              Using fixed grasps, i.e. grasping the handle once and then attempting to open it without regrasping, is
+              not always possible. For some objects (such as the small oven in the videos above), it will result in
+              collisions with the environment. It also aggravates workspace limitations of the robot, where the robot
+              cannot fully open the object due to its workspace limitations. Both situations can be addressed by
+              regrasping the object as needed.
+
+              <br>
+              <br>
+
+
+              Finally, it is important to note that our system takes about 2 minutes to open an articulated object. Even
+              though this is comparable to other works, it is 2 orders of magnitudes slower than humans. 
+
+            <p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Open Questions -->
+  <section class="section hero is-small">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <h2 class="title-is-3"> Open Questions </h2>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="content">
+            <p> We have seen that proprioceptive sensing can be used to open articulated objects.
+              However, it introduces additional complexity and slip needs to be handled. Furthermore, visual information
+              is still required to find appropriate grasp poses. This brings us the the main question:
+              <b>
+                Should we use proprioceptive sensing for articulated object manipulation? Or can we manage with vision
+                  alone? And if we do use proprioceptive sensing, how can we efficiently combine it with visual
+                  information?
+              </b>
+              <br>
+              We believe these are exciting questions and offer directions for future work.
+              <br>
+              <br>
+              Feel free to contact us if you have an opinion on the matter or if you have any other questions or
+              comments!
+            <p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!--BibTex citation -->
   <!-- use https://bibtex.online/ to check -->
@@ -208,7 +361,8 @@
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
                 target="_blank">Academic Project Page Template</a>.
-              You are free to borrow the of this website, we just ask that you link back to this page in the footer.
+              You are free to borrow the of this website, we just ask that you link back to this page in
+              the footer.
               <br> This website is licensed under a <a rel="license"
                 href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
                 Commons Attribution-ShareAlike 4.0 International License</a>.
